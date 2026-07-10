@@ -45,6 +45,12 @@ services:
   redis:
     image: redis:7
     container_name: redis # docker run -d --name redis --network roboshop redis:7
+  mysql:
+    image: joindevops/mysql:v1
+    build: ./mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "RoboShop@1"
 networks:
   default: # this means all the services in this file use this network
     name: roboshop
