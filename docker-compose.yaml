@@ -42,6 +42,16 @@ services:
     depends_on:
     - redis
     - catalogue
+  shipping:
+    build: ./shipping
+    image: joindevops/shipping:v1
+    container_name: shipping
+    environment:
+      CART_ENDPOINT: "cart:8080"
+      DB_HOST: mysql
+    depends_on:
+    - mysql
+    - cart
   redis:
     image: redis:7
     container_name: redis # docker run -d --name redis --network roboshop redis:7
