@@ -49,6 +49,7 @@ services:
     image: joindevops/mysql:v1
     build: ./mysql
     container_name: mysql
+    command: --mysql-native-password=ON
     environment:
       MYSQL_ROOT_PASSWORD: "RoboShop@1"
 networks:
