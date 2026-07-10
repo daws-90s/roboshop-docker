@@ -49,7 +49,7 @@ services:
     image: joindevops/mysql:v1
     build: ./mysql
     container_name: mysql
-    command: --mysql-native-password=ON
+    command: --mysql-native-password=ON --innodb-lock_wait_timeout=120
     environment:
       MYSQL_ROOT_PASSWORD: "RoboShop@1"
 networks:
