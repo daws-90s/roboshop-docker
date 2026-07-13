@@ -11,8 +11,8 @@ WORKDIR /app
 EXPOSE 8080
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
-RUN addgroup -S roboshop && adduser -S -G roboshop roboshop
-RUN chown -R roboshop:roboshop /app
+RUN addgroup -S roboshop && adduser -S -G roboshop roboshop && \
+    chown -R roboshop:roboshop /app
 COPY --from=builder /app /app
 USER roboshop
 CMD ["node", "server.js"]
