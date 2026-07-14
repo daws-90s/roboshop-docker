@@ -1,4 +1,4 @@
-FROM python:3.9.25-alpine3.22
+FROM python:3.9.25-alpine3.22 AS builder
 WORKDIR /app
 COPY requirements.txt .
 # COPY payment.ini .
