@@ -1,6 +1,7 @@
 FROM nginx:1.24.0-alpine3.17-slim
 RUN rm -rf /usr/share/nginx/html/ && \
-    rm -rf /etc/nginx/nginx.conf
+    rm -rf /etc/nginx/nginx.conf && \
+    rm -rf /etc/nginx/conf.d/default.conf
 RUN mkdir -p /var/cache/nginx/client_temp && \
     mkdir -p /var/cache/nginx/proxy_temp && \
     mkdir -p /var/cache/nginx/fastcgi_temp && \
